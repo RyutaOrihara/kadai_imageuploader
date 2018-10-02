@@ -1,0 +1,41 @@
+// Place all the styles related to the tops controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.main-header {
+  padding-bottom: 15%;
+  width: 100%;
+  background-size: cover;
+  background-image: url("TOP.png");
+  background-attachment: fixed;
+}
+
+.main-header img {
+  display: block;
+  margin: 0 auto;
+  width: 25%;
+  padding-top: 15%;
+}
+
+.about {
+  background-color: white;
+  color: #333;
+  padding: 80px;
+  padding-bottom: 120px;
+}
+// .image_area{
+//   width: 100%;
+//   height: 30%;
+// }
+.top_content {
+    text-align: center;
+    font-size: 2rem;
+}
+.clearfix:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+html {
+  position: relative;
+  min-height: 100%;
+}

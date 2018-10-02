@@ -3,12 +3,23 @@
   <head>
     <title>Sample</title>
     <%= csrf_meta_tags %>
-
+    <meta name="viewport" content="width=device-width">  <!-- head内にこのタグ設定を追記する -->
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <header>
+  <ul>
+    <li><%= link_to 'トップページ', tops_path %></li>
+    <li><%= link_to 'ブログ一覧', blogs_path %></li>
+    <li><%= link_to '新規投稿', new_blog_path %></li>
+  </ul>
+</header>
     <%= yield %>
-  </body>
+ <footer>
+   <p>運営会社DIVE INTO CODE株式会社</p>
+   <p>© 2015-2016 Copyright DIVE INTO CODE Corp.</p>
+ </footer>
+</body>
 </html>
