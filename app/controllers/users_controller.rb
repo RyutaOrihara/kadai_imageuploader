@@ -6,16 +6,17 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-    redirect_to user_path(@user.id)
+      redirect_to new_session_path(@user.id)
     else
       render 'new'
     end
   end
 
   def show
-    @favorites_blogs = current_user.favorite_blogs
     @user = User.find(params[:id])
-
+    if current_user.present?
+      @favorites_blogs = current_user.favorite_blogs
+    end
   end
 
   private
