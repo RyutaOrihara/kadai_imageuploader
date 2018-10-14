@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :contacts
   get '/tops', to: 'tops#index'
-  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
+
   resources :blogs do
     collection do
       post :confirm
@@ -10,4 +10,5 @@ Rails.application.routes.draw do
       resources :favorites,only:[:create,:destroy]
     end
   end
+  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 end
