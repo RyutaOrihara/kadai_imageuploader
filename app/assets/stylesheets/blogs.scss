@@ -38,3 +38,8 @@ ul{
     margin-top:20px;
     padding-bottom: 100px;
 }
+div {
+  &.field, &.actions {
+    margin-bottom: 10px;
+  }
+}

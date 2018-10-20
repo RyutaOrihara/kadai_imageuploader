@@ -19,7 +19,14 @@
     <%= form.label :content %>
     <%= form.text_field :content %>
   </div>
-  <%= form.submit %>
+  <div class="field">
+    <%= form.label :image %>
+    <%= image_tag(@blog.image.url,:size => "100x100") if @blog.image.url %>
+    <%= form.file_field :image %>
+  </div>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
 <% end %>
 
 <%= link_to "ブログ一覧画面にもどる", blogs_path %>

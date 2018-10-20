@@ -1,6 +1,12 @@
 <h1>ブログ詳細画面</h1>
 <p>タイトル:<%= @blog.title %></p>
 <p>内容:<%= @blog.content %></p>
+<p>
+  <strong>Image:</strong>
+  <%= image_tag(@blog.image.url,:size => "100x100") %>
+</p>
+
+<%= link_to '戻る', blogs_path, class: 'btn btn-danger' %>
 
 <% unless @blog.user_id == current_user.id %>
   <% if @favorite.present? %>

@@ -2,6 +2,7 @@ class BlogsController < ApplicationController
   before_action :require_login,only:[:new,:edit,:show,:destroy]
   before_action :set_blog,only:[:show,:edit,:update,:destroy]
   before_action :require_login_current,only:[:edit]
+
   def index
     @blogs = Blog.all
   end
@@ -54,7 +55,7 @@ class BlogsController < ApplicationController
   private
 
   def blog_params
-    params.require(:blog).permit(:title,:content)
+    params.require(:blog).permit(:title,:content,:image,:image_cache)
   end
 
   def set_blog

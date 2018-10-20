@@ -6,11 +6,14 @@
 
   <p>タイトル:<%= @blog.title %></p>
   <p>本文:<%= @blog.content %></p>
-  <%= form.submit  "登録する" %>
+  <%= image_tag(@blog.image.url,:size => "100x100") %>
+  <%= form.hidden_field :image_cache %>
+  <%= form.submit "投稿する" %>
 <% end %>
 
 <%= form_with(model: @blog, url: new_blog_path, local: true,method: 'get') do |form| %>
   <%= form.hidden_field :title %>
   <%= form.hidden_field :content %>
+  <%= form.hidden_field :image_cache %>
   <%= form.submit "戻る", name: 'back' %>
 <% end %>

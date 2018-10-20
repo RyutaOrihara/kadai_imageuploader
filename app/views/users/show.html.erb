@@ -1,6 +1,9 @@
 <div class="container">
 <h1><%= @user.name %>のページ</h1>
-
+<p>
+  <strong>Image:</strong>
+  <%= image_tag(@user.image.url,:size => "100x100") %>
+</p>
 <p>メールアドレス: <%= @user.email %></p>
 
 <% if @favorites_blogs.present? %>

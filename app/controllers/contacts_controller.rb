@@ -38,13 +38,13 @@ class ContactsController < ApplicationController
   # PATCH/PUT /contacts/1
   # PATCH/PUT /contacts/1.json
   def update
-      if @contact.update(contact_params)
-        redirect_to contacts_path, notice: 'Contact was successfully updated.'
+    if @contact.update(contact_params)
+      redirect_to contacts_path, notice: 'Contact was successfully updated.'
         # format.json { render :show, status: :ok, location: @contact }
-      else
-        render 'edit'
+    else
+      render 'edit'
         # format.json { render json: @contact.errors, status: :unprocessable_entity }
-      end
+    end
   end
 
   # DELETE /contacts/1
